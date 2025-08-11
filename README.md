@@ -35,7 +35,7 @@ The dataset is designed for:
 | **Fraud Flag** | Binary indicator for fraudulent transactions |
 | **Geolocation (Latitude/Longitude)** | Real GPS coordinates from 50 largest US cities with slight random variation |
 | **Device Used** | Mobile or Desktop |
-| **Network Slice ID** | Ethernet, WiFi, 5G, LTE, or 3G depending on device type |
+| **Network Slice ID** | Ethernet, Wi-Fi, 5G, LTE, or 3G depending on device type |
 | **Latency (ms)** | Simulated delay per connection type (e.g., Ethernet 2–8 ms, LTE 35–90 ms) |
 | **Slice Bandwidth (Mbps)** | Network bandwidth including anomalies |
 | **PIN Code** | Four-digit security code (masked) |
