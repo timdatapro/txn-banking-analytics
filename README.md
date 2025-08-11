@@ -1,34 +1,89 @@
 # txn-banking-analytics
-Transaction Data for Banking Operations
+**Synthetic Transaction Data for Banking Operations and Analytics**
 
-# Dataset Overview
+## 📄 Dataset Overview
+This dataset contains **10,000 synthetic banking transactions** for the year **2024**.  
+The transactions include **Transfers**, **Withdrawals**, and **Deposits** and are distributed across the **50 largest US cities**, proportionally weighted by population.  
 
-This dataset contains 10000 synthetic banking transactions for the year 2024. The transactions include Transfers Withdrawals and Deposits and are distributed across the 50 largest US cities proportionally weighted by population. Special attention was given to US federal holidays particularly Thanksgiving Black Friday and Christmas to model significant spikes in transaction activity.
+Special attention was given to **US federal holidays**, particularly **Thanksgiving**, **Black Friday**, and **Christmas**, to simulate realistic **spikes in transaction activity**.
 
-Each record is enriched with realistic geolocation data device connectivity types latency ranges corresponding to network conditions and simulated anomalies such as fraud attempts outlier amounts and unusual account behavior. The dataset is suitable for financial analysis fraud detection geospatial analytics network performance evaluation and machine learning modeling.
+Each record is enriched with:
+- Realistic **geolocation data**
+- Device connectivity types and corresponding latency ranges
+- Simulated anomalies such as fraud attempts, extreme transaction amounts, and unusual account behavior  
 
-# Key Features
-Transaction ID Unique identifier for each transaction ensuring traceability
-Sender Account ID The account number of the transaction sender
-Receiver Account ID The account number of the transaction receiver
-Transaction Amount The monetary value of the transaction with injected anomalies for extreme values and zero amount inconsistencies
-Transaction Type Categorized as Transfer Withdrawal or Deposit
-Timestamp Exact date and time of the transaction including spikes in volume on US public holidays and especially on Thanksgiving Black Friday and Christmas
-Transaction Status Indicates whether the transaction was successful or failed
-Fraud Flag Binary flag indicating transactions flagged as fraudulent
-Geolocation (Latitude/Longitude) Real GPS coordinates from the 50 largest US cities proportionally distributed by population with small random variation to simulate realistic location spread
-Device Used The type of device used to initiate the transaction Mobile or Desktop
-Network Slice ID Represents realistic network or connection types. Desktop uses Ethernet or WiFi with low latency for Ethernet. Mobile uses 5G LTE 3G or WiFi with latency adjusted per network type
-Latency (ms) Delay in milliseconds simulated according to connection type. Ethernet 2–8 ms Desktop WiFi 8–25 ms Mobile WiFi 10–30 ms 5G 15–45 ms LTE 35–90 ms 3G 90–220 ms
-Slice Bandwidth (Mbps) Bandwidth available during the transaction including simulated anomalies for outlier conditions
-PIN Code Four digit security code masked for privacy
+The dataset is designed for:
+- **Financial data analysis**
+- **Fraud detection**
+- **Geospatial analytics**
+- **Network performance evaluation**
+- **Machine learning modeling** related to transaction analysis and anomaly detection
 
-# Notable Enhancements
-Realistic US Geolocation Data Each transaction is assigned coordinates from the 50 largest US cities. City frequency weighted by population to reflect real world transaction distribution. Slight coordinate jitter added for realistic mapping visualization
-Holiday Transaction Spikes Transaction volumes boosted for US federal holidays with 3.5x spikes on Thanksgiving Black Friday and Christmas. This is useful for studying seasonal transaction patterns and system load analysis
-Network and Latency Simulation Device based connection types and latency values correspond to realistic network performance scenarios
-Anomaly Injection Extreme high value transactions and zero or tiny amounts. Same sender and receiver accounts. Fraud flags and inconsistencies for example Success with zero amount. Network performance outliers
-Total Records 10000
-Year Covered January 1 2024 to December 31 2024
-Geographic Scope 50 largest cities in the United States
-Applications Fraud detection modeling transaction pattern analysis network performance monitoring geospatial visualization and machine learning experimentation
+---
+
+## 🔑 Key Features
+
+| Field | Description |
+|-------|-------------|
+| **Transaction ID** | Unique identifier for each transaction |
+| **Sender Account ID** | The account number of the transaction sender |
+| **Receiver Account ID** | The account number of the transaction receiver |
+| **Transaction Amount** | Monetary value with injected anomalies (extreme and zero values) |
+| **Transaction Type** | Transfer, Withdrawal, or Deposit |
+| **Timestamp** | Exact date and time of the transaction, with holiday spikes |
+| **Transaction Status** | Success or Failed |
+| **Fraud Flag** | Binary indicator for fraudulent transactions |
+| **Geolocation (Latitude/Longitude)** | Real GPS coordinates from 50 largest US cities with slight random variation |
+| **Device Used** | Mobile or Desktop |
+| **Network Slice ID** | Ethernet, WiFi, 5G, LTE, or 3G depending on device type |
+| **Latency (ms)** | Simulated delay per connection type (e.g., Ethernet 2–8 ms, LTE 35–90 ms) |
+| **Slice Bandwidth (Mbps)** | Network bandwidth including anomalies |
+| **PIN Code** | Four-digit security code (masked) |
+
+---
+
+## 🚀 Notable Enhancements
+
+### 1. Realistic US Geolocation Data
+- Coordinates from the **50 largest US cities**
+- City selection weighted by **population**
+- Small random jitter (±0.01–0.05°) for realistic map visualizations
+
+### 2. Holiday Transaction Spikes
+- **3.5×** volume increase for **Thanksgiving**, **Black Friday**, and **Christmas**
+- Higher activity on all **US federal holidays**
+- Useful for studying **seasonal patterns** and **system load impact**
+
+### 3. Network and Latency Simulation
+- Desktop: Ethernet or WiFi (low latency for Ethernet)  
+- Mobile: 5G, LTE, 3G, or WiFi (latency adjusted per network type)
+
+### 4. Anomaly Injection
+- Extreme high-value transactions
+- Zero or tiny amounts
+- Same sender and receiver accounts
+- Fraud flags and inconsistent statuses (e.g., “Success” with zero amount)
+- Network performance outliers
+
+---
+
+## 📊 Dataset Summary
+- **Total Records:** 10,000  
+- **Year Covered:** January 1, 2024 – December 31, 2024  
+- **Geographic Scope:** 50 largest cities in the United States  
+- **Applications:** Fraud detection modeling, transaction pattern analysis, network performance monitoring, geospatial visualization, and machine learning experimentation
+
+---
+
+## 📥 How to Use
+You can download the dataset and use it for:
+- SQL query practice
+- Data visualization projects (Tableau, Power BI)
+- Machine learning models for fraud detection
+- Exploratory data analysis in Python or R
+
+```bash
+# Example: load into Python
+import pandas as pd
+df = pd.read_csv("transaction_data_2024_connectivity_10k_holiday_boost_USA_coords.csv")
+df.head()
