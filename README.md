@@ -55,8 +55,8 @@ The dataset is designed for:
 - Useful for studying **seasonal patterns** and **system load impact**
 
 ### 3. Network and Latency Simulation
-- Desktop: Ethernet or WiFi (low latency for Ethernet)  
-- Mobile: 5G, LTE, 3G, or WiFi (latency adjusted per network type)
+- Desktop: Ethernet or Wi-Fi (low latency for Ethernet)  
+- Mobile: 5G, LTE, 3G, or Wi-Fi (latency adjusted per network type)
 
 ### 4. Anomaly Injection
 - Extreme high-value transactions
